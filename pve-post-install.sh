@@ -29,7 +29,9 @@ sed -i 's/^deb/#deb/g' /etc/apt/sources.list.d/pve-enterprise.list
 log "Disabled 'pve-enterprise' repository\n"
 
 # Enable the "pve-no-subscription" repository
+cat <<EOF >>/etc/apt/sources.list
 deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription
+EOF
 log "Enabled 'pve-no-subscription' repository\n"
 
 # Disable Subscription Warning in Proxmox
